@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Keliling Trapesium</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+        #container {
+            text-align: center;
+        }
+        input[type="number"] {
+            width: 80px;
+        }
+        button {
+        background-color: rgb(17, 105, 98);
+        color: rgb(245, 240, 240);
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+        .button:hover {
+            background-color: #008CBA;
+            transform: smooth(1.1);
+        }
+        #hasilLuas {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Kalkulator Keliling Trapesium Sama Kaki</h2>
+        <p>Masukkan nilai a, b, c, d:</p>
+        
+        <label for="a">A: </label>
+        <input type="number" id="a"><br><br>
+
+        <label for="b">B: </label>
+        <input type="number" id="b"><br><br>
+
+        <label for="c">C: </label>
+        <input type="number" id="c"><br><br>
+
+        <label for="d">D: </label>
+        <input type="number" id="d"><br><br>
+
+        <button onclick="hitungKeliling()">Hitung Keliling</button><br><br>
+
+        <p>Keliling: <span id="hasilKeliling"></span></p>
+    </div>
+
+    <script>
+        function hitungKeliling() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+            var d = parseFloat(document.getElementById("d").value);
+
+            var Keliling = a+b+c+d;
+
+            document.getElementById("hasilKeliling").textContent = Keliling;
+        }
+    </script>
+</body>
+</html>

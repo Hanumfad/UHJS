@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pengecekan Kelayakan Nonton Bioskop</title>
+    <style>
+      body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: cornflowerblue;
+            font-family: Georgia;
+        }
+        button {
+        background-color: rgb(0, 50, 78);
+        color: rgb(245, 239, 239);
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+            }
+        button:hover {
+            background-color: #1e4e5e;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>Pengecekan Kelayakan Nonton Bioskop</h2>
+
+    <label for="usiaBalita">Balita</label>
+    <input type="radio" name="usia" id="usiaBalita" value="balita">
+    <br>
+
+    <label for="usiaRemaja">Remaja</label>
+    <input type="radio" name="usia" id="usiaRemaja" value="remaja">
+    <br>
+
+    <br>
+    <button onclick="cekKelayakanNonton()">Cek Kelayakan</button>
+
+    <p id="hasilKelayakan"></p>
+
+    <script>
+        function cekKelayakanNonton() {
+            var usiaBalita = document.getElementById("usiaBalita");
+            var usiaRemaja = document.getElementById("usiaRemaja");
+            var hasilKelayakan = document.getElementById("hasilKelayakan");
+         
+            if (usiaBalita.checked) {
+                hasilKelayakan.textContent = "Balita tidak boleh menonton ke bioskop.";
+            } else if (usiaRemaja.checked) {
+                hasilKelayakan.textContent = "Remaja boleh menonton ke bioskop.";
+            } else {
+                hasilKelayakan.textContent = "Silakan pilih jenis kelompok usia terlebih dahulu.";
+            }
+        }
+    </script>
+</body>
+</html>

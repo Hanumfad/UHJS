@@ -1,0 +1,37 @@
+#myForm {
+    text-align: center;
+}
+body {
+    font-family: cursive;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+button {
+    text-align: center;
+}
+button {
+    display: flex;
+    justify-content: center;
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px; 
+    margin-right: 10px;
+}
+.button:hover {
+    background-color: #008CBA;
+    transform: smooth(1.1);
+}

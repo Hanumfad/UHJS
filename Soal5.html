@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Kembalian</title>
+    <style>
+        body {
+            background-color: cadetblue;
+            text-align: center;
+            font-size: 20px;
+        }
+        #container {
+            text-align: center;
+        }
+        input[type="number"] {
+            width: 80px;
+        }
+        button {
+            background-color: rgb(6, 97, 82);
+            color: rgb(245, 240, 240);
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        label {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        #hitungKembalian {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kalkulator Kembalian</h1>
+    <table id="container">
+        <tr>
+            <td><label for="hargaBarang">Harga Barang:</label></td>
+            <td><input type="number" id="hargaBarang"></td>
+        </tr>
+        <tr>
+            <td><label for="jumlahUang">Jumlah Uang:</label></td>
+            <td><input type="number" id="jumlahUang"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="hitungKembalian()">Hitung Kembalian</button></td>
+        </tr>
+    </table>
+    <p id="hasilKembalian"></p>
+    <script>
+        
+    function hitungKembalian() {
+       
+        var hargaBarang = parseFloat(document.getElementById("hargaBarang").value);
+        var jumlahUang = parseFloat(document.getElementById("jumlahUang").value);
+        var kembalian = jumlahUang - hargaBarang;
+        if (kembalian >= 0) {
+            document.getElementById("hasilKembalian").innerText = "Kembalian: " + kembalian.toFixed(2);
+        } else {
+            document.getElementById("hasilKembalian").innerText = "Uang kurang!";        
+        }
+    }
+</script>
+</body>
+</html>

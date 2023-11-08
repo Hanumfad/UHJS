@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pembelian Barang Aksesoris</title>
+</head>
+<style>
+    body {
+        background-color: rgb(168, 118, 23);
+        text-align: center;
+    }
+    #container {
+        text-align: center;
+    }
+    input[type="number"] {
+        width: 80px;
+    }
+    button {
+    background-color: rgb(168, 75, 9);
+    color: rgb(10, 6, 6);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #008CBA;
+    transform: scale(1.1);
+}
+
+    label {
+        margin-bottom: 10px;
+        width: 80px;
+    }
+    #hitungKembalian {
+        margin-top: 10px;
+    }
+
+</style>
+<body>
+    <h1>Form Pembelian Barang Aksesoris</h1>
+    <form id="formPembelian">
+        <label for="namaBarang">Nama Barang:</label>
+        <select id="namaBarang">
+            <option value="USB">USB</option>
+            <option value="Memori">Memori</option>
+            <option value="Speaker">Speaker</option>
+        </select>
+        <br>
+        <br> <!-- Tambahkan baris baru di sini -->
+        <label for="jumlahBarang">Jumlah Barang:</label>
+        <input type="number" id="jumlahBarang">
+        <br>
+        <br> <!-- Tambahkan baris baru di sini -->
+        <button type="button" onclick="hitungTotal()">Hitung Total Harga</button>
+    </form>
+    <p id="hasilTotalHarga"></p>
+
+    <script>
+        function hitungTotal() {
+            var namaBarangElement = document.getElementById("namaBarang");
+            var jumlahBarangElement = document.getElementById("jumlahBarang");
+            var hasilTotalHargaElement = document.getElementById("hasilTotalHarga");
+
+            var namaBarang = namaBarangElement.value;
+            var jumlahBarang = parseInt(jumlahBarangElement.value, 10);
+
+            var hargaBarang;
+
+            switch (namaBarang) {
+                case "USB":
+                    hargaBarang = 20000;
+                    break;
+                case "Memori":
+                    hargaBarang = 50000;
+                    break;
+                case "Speaker":
+                    hargaBarang = 20000;
+                    break;
+                default:
+                    hargaBarang = 0;
+            }
+
+            var totalHarga = hargaBarang * jumlahBarang;
+
+            if (totalHarga > 0) {
+                hasilTotalHargaElement.innerHTML = "Total harga untuk " + jumlahBarang + " " + namaBarang + " adalah " + totalHarga + " Rupiah";
+            } else {
+                hasilTotalHargaElement.innerHTML = "Maaf, barang tidak ditemukan atau jumlah barang tidak valid.";
+            }
+        }
+    </script>
+</body>
+</html>
